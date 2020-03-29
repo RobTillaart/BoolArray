@@ -29,16 +29,12 @@ The basic functions of the class are
 * **toggle(index)**
 * **clear()**
 
-The **BOOLARRAY_MAXSIZE** is set to 2000, this was chosen as **malloc()** can only allocate 255 bytes 
-in one call. Note this is not checked with the recent versions of the IDE anymore.
-
 Check out the examples.
 
 ## Notes
-The BoolArray class dynamicly allocates memory, so called BA_SEGMENTS, 
-each of 200 bytes.
-As the memory size of different processors differ the maximum amount of SEGMENTS 
-depends on architecture.
+The BoolArray class dynamicly allocates memory.
+The **BOOLARRAY_MAXSIZE** is set to 2000, this was chosen as **malloc()** can only allocate 255 bytes 
+in one call on an UNO. This is not checked with the recent versions of the IDE anymore.
 
 The library is tested on AVR architecture only.
 

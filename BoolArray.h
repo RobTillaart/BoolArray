@@ -1,15 +1,14 @@
 #pragma once
 //
 //    FILE: BoolArray.h
-//  AUTHOR: Rob dot Tillaart at gmail dot com
-// VERSION: 0.2.0
+//  AUTHOR: Rob Tillaart
+// VERSION: 0.2.1
 // PURPOSE: BoolArray library for Arduino
-// HISTORY: See BoolArray.cpp
-//
+//     URL: https://github.com/RobTillaart/BoolArray.git
+
 // BoolArray implement a compact array of booleans of max size 2000.
 // For larger arrays one need to modify the code, or use BitArray.
 // Tested on AVR only
-//
 
 #include "Arduino.h"
 

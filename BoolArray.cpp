@@ -1,14 +1,12 @@
 //
 //    FILE: BoolArray.cpp
 //  AUTHOR: Rob Tillaart
-// VERSION: 0.2.0
+// VERSION: 0.2.1
 // PURPOSE: BoolArray library for Arduino
 //     URL: https://github.com/RobTillaart/BoolArray.git
 //          http://forum.arduino.cc/index.php?topic=361167
 
-//
-// Released to the public domain
-// 
+// 0.2.1  2020-06-05 FIx library.json
 // 0.2.0  2020-03-29 #pragma, readme.md, 
 // 0.1.4  2017-07-16 added masks for performance
 // 0.1.3  - added toggle

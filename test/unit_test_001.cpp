@@ -49,7 +49,7 @@ unittest(test_set_get_toggle)
   BoolArray ba;
 
   ba.begin(1000);
-  assertEqual(BA_OK, ba.getError());
+  assertEqual(1000, ba.size());
 
   fprintf(stderr, "\t1000x set(i, 0) -> sum += get(i)\n");
   int sum = 0;
@@ -93,15 +93,12 @@ unittest(test_clear)
   BitArray ba;
 
   ba.begin(1000);
-  assertEqual(BA_OK, ba.getError());
+  assertEqual(1000, ba.size());
 
 
   fprintf(stderr, "\t1000x set(i, 1) -> clear() -> sum += get(i)\n");
   int sum = 0;
-  for (int i = 0; i < 1000; i++)
-  {
-    ba.set(i, 1);
-  }
+  ba.setAll(1);
   for (int i = 0; i < 1000; i++)
   {
     sum += ba.get(i);

@@ -90,7 +90,7 @@ unittest(test_set_get_toggle)
 
 unittest(test_clear)
 {
-  BitArray ba;
+  BoolArray ba;
 
   ba.begin(1000);
   assertEqual(1000, ba.size());

@@ -88,6 +88,36 @@ unittest(test_set_get_toggle)
   assertEqual(0, sum);
 }
 
+unittest(test_clear)
+{
+  BitArray ba;
+
+  ba.begin(1000);
+  assertEqual(BA_OK, ba.getError());
+
+
+  fprintf(stderr, "\t1000x set(i, 1) -> clear() -> sum += get(i)\n");
+  int sum = 0;
+  for (int i = 0; i < 1000; i++)
+  {
+    ba.set(i, 1);
+  }
+  for (int i = 0; i < 1000; i++)
+  {
+    sum += ba.get(i);
+  }
+  assertEqual(1000, sum);
+
+  ba.clear();
+  sum = 0;
+  for (int i = 0; i < 1000; i++)
+  {
+    sum += ba.get(i);
+  }
+  assertEqual(0, sum);
+}
+
+
 unittest_main()
 
 // --------

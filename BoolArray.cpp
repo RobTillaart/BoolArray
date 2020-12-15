@@ -73,7 +73,7 @@ uint8_t BoolArray::toggle(const uint16_t idx)
 uint8_t BoolArray::setAll(const uint8_t value)
 {
   if (_ar == NULL) return BOOLARRAY_INIT_ERROR;
-  uint16_t *p = (uint16_t *)_ar;
+  uint8_t *p = (uint16_t *)_ar;
   uint8_t t = (_size + 7) / 8;
   if (value == 0) 
   {

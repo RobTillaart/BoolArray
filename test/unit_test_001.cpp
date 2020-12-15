@@ -33,6 +33,7 @@ unittest_teardown()
 {
 }
 
+
 unittest(test_constructor)
 {
   BoolArray ba;
@@ -41,8 +42,8 @@ unittest(test_constructor)
   assertEqual(1000, ba.size());
 
   fprintf(stderr, "\tVERSION:\t %s\n", BOOLARRAY_LIB_VERSION);
-
 }
+
 
 unittest(test_set_get_toggle)
 {
@@ -88,6 +89,7 @@ unittest(test_set_get_toggle)
   assertEqual(0, sum);
 }
 
+
 unittest(test_clear)
 {
   BoolArray ba;
@@ -96,7 +98,7 @@ unittest(test_clear)
   assertEqual(1000, ba.size());
 
 
-  fprintf(stderr, "\t1000x set(i, 1) -> clear() -> sum += get(i)\n");
+  fprintf(stderr, "\t1000x setAll(1) -> clear() -> sum += get(i)\n");
   int sum = 0;
   ba.setAll(1);
   for (int i = 0; i < 1000; i++)

@@ -73,15 +73,15 @@ uint8_t BoolArray::toggle(const uint16_t idx)
 uint8_t BoolArray::setAll(const uint8_t value)
 {
   if (_ar == NULL) return BOOLARRAY_INIT_ERROR;
-  uint16_t *p = (uint16_t *)_ar;
-  uint8_t t = (_size + 15) / 16;
+  uint8_t *p = _ar;
+  uint8_t t = (_size + 7) / 8;
   if (value == 0) 
   {
     while(t--) *p++ = 0;
   }
   else
   {
-    while(t--) *p++ = 0xFFFF;  // set 16 bits at once  
+    while(t--) *p++ = 0xFF;  // set 16 bits at once  
   }  
   return BOOLARRAY_OK;
 }

@@ -8,6 +8,7 @@
 
 Arduino library for compact array of booleans of max size 2000 (UNO).
 
+
 ## Description
 
 The BoolArray class allows the user to instantiate an array of booleans, allocating only one bit per element. 
@@ -26,17 +27,26 @@ BoolArray is faster than BitArray as it only supports single bits and does not n
 of different bytes to read/write a value. However BoolArray currently only supports 2000 bits while
 BitArray can support more.
 
-## Operations
 
-In the function **begin(#elements)** the number of elements needs to be defined. 
+## Interface
 
-The basic functions of the class are
-- **set(index, value)**
-- **get(index)**
-- **toggle(index)**
-- **clear()**
+- ** BoolArray()** Constructor
+- **~BoolArray()** Destructor
+- **uint8_t begin(size)** dynamically allocates size elements. Returns **BOOLARRAY_OK** on success.
+- **uint16_t size()** returns number of bool elements.
+- **uint16_t memory()** returns # bytes used
+- **uint8_t setAll(value)** Sets all elements to false (0) or true (all other values).
+- **uint8_t set(index, value)** Set the element to false (0) or true (all other values).
+- **uint8_t get(index)** Return 0 or 1 OR an error value which can be interpreted as true. 
+So one need to check these carefully.
+- **uint8_t toggle(index)** Toggles element at index. Returns **BOOLARRAY_OK** on success.
+- **uint8_t clear()** Sets all elements to false.
+
+
+## Operation
 
 Check out the examples.
+
 
 ## Notes
 

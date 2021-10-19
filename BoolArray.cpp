@@ -60,10 +60,12 @@ uint8_t BoolArray::set(const uint16_t index, const uint8_t value)
 {
   if (_ar == NULL) return BOOLARRAY_INIT_ERROR;
   if (index >= _size) return BOOLARRAY_SIZE_ERROR;
+  if (value >1) return BOOLARRAY_ERROR;       //consider just 0 and 1 value
+  
   uint8_t by = index / 8;
   uint8_t bi = index & 7;
-  if (value == 0) _ar[by] &= ~masks[bi];
-  else _ar[by] |= masks[bi];
+  _ar[by]  = value? _ar[by]|masks[bi] : _ar[by] &~masks[bi];
+  
   return BOOLARRAY_OK;
 }
 
@@ -80,19 +82,17 @@ uint8_t BoolArray::toggle(const uint16_t index)
 
 
 // 32 bit is even faster, 
-uint8_t BoolArray::setAll(const uint8_t value)
+uint8_t BoolArray::setAll(/*const*/uint8_t value)    //we have to change const so we can edit value
 {
   if (_ar == NULL) return BOOLARRAY_INIT_ERROR;
+  if (value >1) return BOOLARRAY_ERROR;       //consider just 0 and 1 value
+  
   uint8_t *p = _ar;
   uint8_t t = (_size + 7) / 8;
-  if (value == 0) 
-  {
-    while(t--) *p++ = 0;
-  }
-  else
-  {
-    while(t--) *p++ = 0xFF;  // set 16 bits at once  
-  }  
+  value *= 0xFF;                      //In order to reduce code, we can define directly value between 0 to 0xFF
+  while(t--) *p++ = value;
+  
+
   return BOOLARRAY_OK;
 }
 

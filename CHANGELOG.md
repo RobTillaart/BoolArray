@@ -12,7 +12,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - update license 2023
 - move code to .cpp
 - improved measurement of performance - boolArrayDemo2.ino
-- improved **clear()**
 
 
 ## [0.2.6] - 2022-10-29

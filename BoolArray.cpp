@@ -69,7 +69,7 @@ uint8_t BoolArray::setAll(const uint8_t value)
 
 uint8_t BoolArray::clear()
 {
-  setAll(0);
+  return setAll(0);
 }
 
 

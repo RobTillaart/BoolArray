@@ -73,7 +73,6 @@ So one need to check these carefully.
 - **uint8_t toggle(uint16_t index)** Toggles element at index. Returns **BOOLARRAY_OK** on success.
 
 
-
 ## Future
 
 #### Must
@@ -88,12 +87,9 @@ So one need to check these carefully.
 - performance intern 16 bit iso 8 bit. (0.3.0)
   - faster on UNO
   - does allocation work as it should?
-  
 
 #### Could
 
-- **begin()**
-  - if (_size == size) no need to reallocate...
 - update examples.
 - boolArray32() class
   - begin(uint32_t size);

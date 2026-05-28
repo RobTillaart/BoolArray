@@ -147,7 +147,7 @@ So one need to check these carefully.
 
 #### Could
 
-- add examples.
+- add examples
 - remove the BOOLARRAY_MAXSIZE as it is user responsibility?
   - add flag to begin() to ignore size check?
 - investigate **uint32_t array[N]** for BoolArray32 (ESP32?)

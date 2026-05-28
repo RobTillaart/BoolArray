@@ -1,7 +1,7 @@
 //
-//  FILE: BoolArray.cpp
+//    FILE: BoolArray.cpp
 //  AUTHOR: Rob Tillaart
-// VERSION: 0.3.1
+// VERSION: 0.3.2
 //    DATE: 2015-12-06
 // PURPOSE: BoolArray library for Arduino
 //     URL: https://github.com/RobTillaart/BoolArray
@@ -25,7 +25,10 @@ BoolArray::BoolArray()
 
 BoolArray::~BoolArray()
 {
-  if (_array) free(_array);
+  if (_array)
+  {
+    free(_array);
+  }
 }
 
 
@@ -125,7 +128,6 @@ uint8_t BoolArray::toggle(const uint16_t index)
 }
 
 
-
 /////////////////////////////////////////////////////////
 //
 //  32 bit version for large bool arrays
@@ -140,7 +142,10 @@ BoolArray32::BoolArray32()
 
 BoolArray32::~BoolArray32()
 {
-  if (_array) free(_array);
+  if (_array)
+  {
+    free(_array);
+  }
 }
 
 
